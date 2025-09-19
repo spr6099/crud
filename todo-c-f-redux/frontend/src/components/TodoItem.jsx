@@ -14,12 +14,16 @@ const TodoItem = ({ todo }) => {
           cursor: "pointer",
         }}
         onClick={() =>
-          dispatch(editTodo({ id: todo._id, data: { completed: !todo.completed } }))
+          dispatch(
+            editTodo({ id: todo._id, data: { completed: !todo.completed } })
+          )
         }
       >
         {todo.text}
       </span>
-      <button onClick={() => dispatch(setEdit({ id: todo._id, text: todo.text }))}>
+      <button
+        onClick={() => dispatch(setEdit({ id: todo._id, text: todo.text }))}
+      >
         Edit
       </button>
       <button onClick={() => dispatch(removeTodo(todo._id))}>Delete</button>

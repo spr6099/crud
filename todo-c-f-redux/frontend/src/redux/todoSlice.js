@@ -16,6 +16,7 @@ export const createTodo = createAsyncThunk("todos/createTodo", async (text) => {
 
 export const editTodo = createAsyncThunk("todos/editTodo", async ({ id, data }) => {
   await updateTodo(id, data);
+  
   const { data: todos } = await getTodos();
   return todos;
 });
