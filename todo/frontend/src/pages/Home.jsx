@@ -8,9 +8,6 @@ const Home = () => {
   const [editId, seteditId] = useState(null);
   const [editText, seteditText] = useState("");
 
-  const [searchText, setsearchText] = useState("");
-  const [filterText, setfilterText] = useState("all");
-
   const fetchTodos = async () => {
     const { data } = await getTodos();
     settodos(data);
@@ -42,20 +39,7 @@ const Home = () => {
     fetchTodos();
   };
 
-  const filteredTodos = todos.filter((todo) => {
-    const searchTodos = todo.text
-      .toLowerCase()
-      .includes(searchText.toLowerCase());
 
-    const matchesFilter =
-      filterText === "all"
-        ? true
-        : filterText === "completed"
-        ? todo.completed
-        : !todo.completed;
-
-    return searchTodos & matchesFilter;
-  });
 
   useEffect(() => {
     fetchTodos();
@@ -64,21 +48,7 @@ const Home = () => {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Todo App</h2>
-      <div className="header">
-        <div className="search">
-          <input
-            placeholder="Search todo"
-            onChange={(e) => setsearchText(e.target.value)}
-          ></input>
-        </div>
-        <div className="filter">
-          <select onClick={(e) => setfilterText(e.target.value)}>
-            <option value="all">All</option>
-            <option value="completed">Completed</option>
-            <option value="pending">Pending</option>
-          </select>
-        </div>
-      </div>
+     
 
       <TodoInput
         onAdd={onAdd}
@@ -87,7 +57,7 @@ const Home = () => {
         onUpdate={onUpdate}
       />
       <TodoList
-        todos={filteredTodos}
+        todos={todos}
         onDelete={onDelete}
         onToggle={onToggle}
         initialEdit={initialEdit}

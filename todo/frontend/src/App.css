@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* App.jsx */
+
+.container {
+  margin-top: 50px;
+  background: #353232b4;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  min-width: 400px;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.search input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.filter select {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+    background: #027912;
+
+}
+
+/* TodoInput */
+
+.todoInput input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  width: 65%;
+  margin-right: 10px;
+  outline: none;
+}
+
+.todoInput button {
+  padding: 10px 15px;
+  background: #0e05bdec;
+  color: #eee;
+  border: none;
+  border-radius: 5px;
+}
+
+/* todoItem.jsx */
+
+.todoItem {
+  background: #cac6c6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 10px;
+}
+
+.todoItem span {
+  flex: 1;
+}
+
+.todoItem button:first-of-type {
+  background: #0e05bdec;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #eee;
+}
+
+.todoItem button:last-of-type {
+  background: #df0707;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+}
+
+/* todoList.jsx */
+.todoList {
+  padding: 0;
+}
